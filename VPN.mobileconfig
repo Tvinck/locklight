@@ -1,42 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" 
-"http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+ "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>PayloadContent</key>
-    <array>
-        <dict>
-            <key>PayloadType</key>
-            <string>com.apple.applicationaccess</string>
-            <key>PayloadVersion</key>
-            <integer>1</integer>
-            <key>PayloadIdentifier</key>
-            <string>com.example.noflashlight</string>
-            <key>PayloadUUID</key>
-            <string>12345678-ABCD-1234-ABCD-1234567890AB</string>
-            <key>PayloadDisplayName</key>
-            <string>No Flashlight</string>
-            <key>allowControlCenterWhileLocked</key>
-            <false/>
-            <key>allowCamera</key>
-            <true/>
-            <key>allowVideoConferencing</key>
-            <true/>
-            <key>allowScreenShot</key>
-            <true/>
-        </dict>
-    </array>
-    <key>PayloadDisplayName</key>
-    <string>No Flashlight</string>
-    <key>PayloadIdentifier</key>
-    <string>com.example.noflashlightprofile</string>
-    <key>PayloadRemovalDisallowed</key>
-    <false/>
-    <key>PayloadType</key>
-    <string>Configuration</string>
-    <key>PayloadUUID</key>
-    <string>87654321-DCBA-4321-DCBA-0987654321FE</string>
-    <key>PayloadVersion</key>
-    <integer>1</integer>
+  <key>PayloadType</key>
+  <string>Configuration</string>
+  <key>PayloadVersion</key>
+  <integer>1</integer>
+  <key>PayloadIdentifier</key>
+  <string>com.example.profile.nocamera.noflash</string>
+  <key>PayloadUUID</key>
+  <string>F2C7A9C2-1D9B-4F1D-9D5C-111111111111</string>
+  <key>PayloadDisplayName</key>
+  <string>Disable Camera & Flashlight</string>
+  <key>PayloadRemovalDisallowed</key>
+  <false/>
+  <key>PayloadContent</key>
+  <array>
+    <dict>
+      <key>PayloadType</key>
+      <string>com.apple.applicationaccess</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>PayloadIdentifier</key>
+      <string>com.example.profile.nocamera.noflash.restrictions</string>
+      <key>PayloadUUID</key>
+      <string>0A0A0A0A-2222-4444-8888-AAAAAAAAAAAA</string>
+      <key>PayloadDisplayName</key>
+      <string>Restrictions</string>
+
+      <!-- Главный переключатель: камера ВЫКЛ -->
+      <key>allowCamera</key>
+      <false/>
+
+      <!-- Необязательно: запрет FaceTime/видеосвязи (иногда тоже пытается звать камеру) -->
+      <key>allowVideoConferencing</key>
+      <false/>
+
+      <!-- Необязательно: отключить Центр управления на экране блокировки -->
+      <key>allowControlCenterInLockScreen</key>
+      <false/>
+    </dict>
+  </array>
 </dict>
 </plist>
